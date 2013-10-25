@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Leaflet Demo/Test File</title>
+<title>Super Awesome Fun Map</title>
 
  
  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
@@ -11,6 +11,9 @@
  <![endif]-->
  
  <style>
+ body {
+ margin: 0px
+ }
  html,body {
  height: 100%
  }
@@ -41,9 +44,9 @@ L.tileLayer('http://a.tile.cloudmade.com/d0070b9fb9c74e398e68d5b7084ce32c/1930/2
     maxZoom: 18
 }).addTo(map);
 
-var marker = L.marker([46.257204, -119.20206]).addTo(map);
+var marker1 = L.marker([46.257204, -119.20206]).addTo(map);
 
-marker.bindPopup("<b>Brian Geyer</b><br>Pasco, Washington").closePopup();
+marker1.bindPopup("<b>Brian Geyer</b><br>Pasco, Washington").closePopup();
 
 </script>
 
