@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Super Awesome Fun Map</title>
+
+ 
+ <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+ <![endif]-->
+ 
+ <style>
+ body {
+ margin: 0px
+ }
+ html,body {
+ height: 100%
+ }
+ </style>
+</head>
+
+<body>
+
+<!--div places the map in the web page - In this case, the style which determines its height is inline (as opposed to in the 
+head section of the document or the external CSS file-->
+
+<div id="map" style="height: 100%"></div>
+
+<!--This section calls the .js file. In this case, the code is calling to the hosted version of the leaflet.js file on the 
+leaflet server. It could also have called a local version of the file-->
+ 
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+<!--this section is the javascript which loads the cloadmade tiles, sets the max zoom level, adds a marker, and binds a pop up 
+to that marker-->
+
+<script>
+
+var map = L.map('map').setView([39.784892, -98.587046], 4);
+
+L.tileLayer('http://a.tile.cloudmade.com/d0070b9fb9c74e398e68d5b7084ce32c/1930/256/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    maxZoom: 18
+}).addTo(map);
+
+var marker1 = L.marker([46.256763, -119.201982]).addTo(map);
+
+marker1.bindPopup("<b>Brian Geyer</b><br>Pasco, Washington").closePopup();
+
+var marker2 = L.marker([43.0994, -77.4431]).addTo(map);
+
+marker2.bindPopup("<b>Katy Meyers</b><br>Fairport, New York").closePopup();
+
+var marker3 = L.marker([42.194048, -83.332777]).addTo(map);
+
+marker2.bindPopup("<b>David Kalonji Walton</b><br>Romulus, Michigan</b><br>Welcome to RomTown!").closePopup();
+
+
+</script>
+
+</body>
+</html>
